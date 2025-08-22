@@ -1,7 +1,7 @@
 QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-QT += webenginewidgets
+QT += webenginewidgets websockets
 QTPLUGIN += qtvirtualkeyboardplugin
 CONFIG += c++17
 
@@ -9,10 +9,14 @@ CONFIG += c++17
 # In order to do so, uncomment the following line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
+VPATH += src
+INCLUDEPATH += src
+
 SOURCES += \
     barbutton.cpp \
     barwidget.cpp \
     configuration.cpp \
+    connectionchecker.cpp \
     main.cpp \
     mainwindow.cpp \
     progressbarwidget.cpp \
@@ -20,18 +24,21 @@ SOURCES += \
     tools.cpp \
     userinputeventfilter.cpp \
     webpage.cpp \
+    websocketcontrol.cpp \
     webview.cpp
 
 HEADERS += \
     barbutton.h \
     barwidget.h \
     configuration.h \
+    connectionchecker.h \
     mainwindow.h \
     progressbarwidget.h \
     resettimer.h \
     tools.h \
     userinputeventfilter.h \
     webpage.h \
+    websocketcontrol.h \
     webview.h
 
 FORMS +=
